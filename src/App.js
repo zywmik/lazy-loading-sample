@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense, useState } from 'react';
+import './app.css';
+
+
+const MysteriousImage = lazy(() => import('./mysterious-image'));
 
 function App() {
+  const [showImage, setShowImage] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={() => setShowImage(!showImage)}>
+        Show mysterious image
+        <span role="img" aria-label="emoji"> 🧐 </span>
+      </button>
+      <Suspense fallback={<div>Loading...</div>}>
+        {showImage && <MysteriousImage />}
+      </Suspense>
     </div>
   );
 }
