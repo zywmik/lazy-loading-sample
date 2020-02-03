@@ -1,0 +1,17 @@
+.root {
+  text-align: center;
+  margin-top: 150px;
+}
+
+button {
+  border-radius: 50px;
+  background-color: #c7c7c7;
+}
+
+img {
+  border-radius: 50px;
+}
+
+body {
+  background-color: #fafafa;
+}
