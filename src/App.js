@@ -12,7 +12,7 @@ function App() {
         Show mysterious image
         <span role="img" aria-label="emoji"> 🧐 </span>
       </button>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="loader">Loading...</div>}>
         {showImage && <MysteriousImage />}
       </Suspense>
     </div>
